@@ -1,5 +1,6 @@
 package app.ifnyas.kompas.view.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity.CENTER
 import android.view.LayoutInflater
@@ -21,6 +22,7 @@ import app.ifnyas.kompas.databinding.FragmentHomeBinding
 import app.ifnyas.kompas.model.Article
 import app.ifnyas.kompas.model.ArticleViewHolder
 import app.ifnyas.kompas.model.HeadlineViewHolder
+import app.ifnyas.kompas.view.SplashActivity
 import app.ifnyas.kompas.viewmodel.HomeViewModel
 import app.ifnyas.kompas.viewmodel.MainViewModel
 import coil.load
@@ -109,7 +111,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun initSwipeRefresh() {
-        bind.root.setOnRefreshListener { initData() }
+        bind.root.setOnRefreshListener { refresh() }
     }
 
     private fun initProfileView() {
@@ -207,7 +209,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     "Hasil akan lebih baik jika nama sesuai dengan Indeks Profil Kompas."
             )
             input(hint = "Tulis nama di sini...", prefill = vm.nameProfile.value) { _, input ->
-                vm.setNameProfile("$input"); initData()
+                vm.setNameProfile("$input"); refresh()
             }
             getInputField().apply {
                 gravity = CENTER
@@ -219,6 +221,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             negativeButton(text = "Kembali")
             positiveButton(text = "Simpan")
         }
+    }
+
+    private fun refresh() {
+        activity?.finishAfterTransition()
+        startActivity(Intent(requireContext(), SplashActivity::class.java))
     }
 
     private fun createMoreDialog() { //TODO strange behavior
