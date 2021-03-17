@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragment.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/lay_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="24dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/lay_card_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="16dp"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="24dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_profile"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8dp"
+                            android:adjustViewBounds="true"
+                            android:visibility="gone"
+                            app:layout_constraintBottom_toTopOf="@id/img_profile"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintWidth_percent="0.25"
+                            tools:src="@drawable/jpg_profile" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_profile"
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            app:icon="@drawable/ic_baseline_person_search_24"
+                            app:iconTint="@color/accent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/text_name_profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="8dp"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                            app:layout_constraintBottom_toBottomOf="@id/btn_profile"
+                            app:layout_constraintTop_toTopOf="@id/btn_profile"
+                            tools:text="Naufaldie Marco" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            app:cardBackgroundColor="@color/grey_800"
+                            app:cardCornerRadius="8dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/text_name_profile">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="16dp">
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/static_channel"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Kanal"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintWidth_percent="0.33" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/text_channel_profile"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:ellipsize="end"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="@id/static_channel"
+                                    app:layout_constraintStart_toStartOf="@id/static_channel"
+                                    app:layout_constraintTop_toBottomOf="@id/static_channel"
+                                    tools:text="Entertainment" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/static_articles"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Artikel"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.5"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintWidth_percent="0.33" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/text_articles_profile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="@id/static_articles"
+                                    app:layout_constraintStart_toStartOf="@id/static_articles"
+                                    app:layout_constraintTop_toBottomOf="@id/static_articles"
+                                    tools:text="439" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/static_since"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Sejak"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="1"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintWidth_percent="0.33" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/text_since_profile"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:gravity="center"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="@id/static_since"
+                                    app:layout_constraintStart_toStartOf="@id/static_since"
+                                    app:layout_constraintTop_toBottomOf="@id/static_since"
+                                    tools:text="Dec 2018" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_static_title_articles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Kumpulan Artikel"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    app:layout_constraintTop_toBottomOf="@id/card_profile" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_static_desc_articles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="Berdasarkan tulisan terbaru"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    app:layout_constraintTop_toBottomOf="@id/card_profile" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_headlines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="4dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_articles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <ProgressBar
+                    android:id="@+id/pb_articles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="24dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_more"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="Selengkapnya"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                    android:textColor="@color/primary"
+                    android:visibility="gone"
+                    app:cornerRadius="8dp"
+                    app:strokeColor="@color/primary" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_static_end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="24dp"
+                    android:text="Akhir Dari Daftar"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:textStyle="italic"
+                    android:visibility="gone" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_baseline_arrow_upward_24"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
